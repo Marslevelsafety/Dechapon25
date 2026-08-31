@@ -1,196 +1,370 @@
-![SQLFluff](https://raw.githubusercontent.com/sqlfluff/sqlfluff/main/images/sqlfluff-wide.png)
+Dechapon25 SQL Linter
 
-# The SQL Linter for Humans
+￼
 
-[![PyPi Version](https://img.shields.io/pypi/v/sqlfluff.svg?style=flat-square&logo=PyPi)](https://pypi.org/project/sqlfluff/)
-[![PyPi License](https://img.shields.io/pypi/l/sqlfluff.svg?style=flat-square)](https://pypi.org/project/sqlfluff/)
-[![PyPi Python Versions](https://img.shields.io/pypi/pyversions/sqlfluff.svg?style=flat-square)](https://pypi.org/project/sqlfluff/)
-[![PyPi Status](https://img.shields.io/pypi/status/sqlfluff.svg?style=flat-square)](https://pypi.org/project/sqlfluff/)
-[![PyPi Downloads](https://img.shields.io/pypi/dm/sqlfluff?style=flat-square)](https://pypi.org/project/sqlfluff/)
+A SQL Linter for Humans
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/sqlfluff/sqlfluff/.github/workflows/ci-tests.yml?logo=github&style=flat-square)](https://github.com/sqlfluff/sqlfluff/actions/workflows/ci-tests.yml?query=branch%3Amain)
-[![ReadTheDocs](https://img.shields.io/readthedocs/sqlfluff?style=flat-square&logo=Read%20the%20Docs)](https://sqlfluff.readthedocs.io)
-[![Linting and formatting: Ruff](https://img.shields.io/badge/linting%20%26%20formatting-ruff-D7FF64.svg?style=flat-square)](https://docs.astral.sh/ruff/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/sqlfluff/sqlfluff?logo=docker&style=flat-square)](https://hub.docker.com/r/sqlfluff/sqlfluff)
-[![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20SQLFluff%20Guru-006BFF?style=flat-square)](https://gurubase.io/g/sqlfluff)
+Dechapon25 is a SQL linting and formatting project based on the open-source SQLFluff project.
 
-**SQLFluff** is a dialect-flexible and configurable SQL linter. Designed
-with [ELT](https://www.techtarget.com/searchdatamanagement/definition/Extract-Load-Transform-ELT) applications in mind, **SQLFluff** also works with Jinja templating
-and dbt. **SQLFluff** will auto-fix most linting errors, allowing you to focus
-your time on what matters.
+It provides configurable SQL linting, automatic fixes, multiple SQL dialects, templating support, and developer tooling for maintaining consistent and readable SQL code.
 
-## Table of Contents
+Project status: Dechapon25 is an independent fork of SQLFluff. Changes made in this repository may differ from the upstream SQLFluff project.
 
-1. [Dialects Supported](#dialects-supported)
-2. [Templates Supported](#templates-supported)
-3. [VS Code Extension](#vs-code-extension)
-4. [Getting Started](#getting-started)
-5. [Documentation](#documentation)
-6. [Releases](#releases)
-7. [SQLFluff on Slack](#sqlfluff-on-slack)
-8. [SQLFluff on Twitter](#sqlfluff-on-twitter)
-9. [Contributing](#contributing)
-10. [Sponsors](#sponsors)
+￼ ￼ ￼ ￼
 
-## Dialects Supported
+Table of Contents
 
-Although SQL is reasonably consistent in its implementations, there are several
-different dialects available with variations of syntax and grammar. **SQLFluff**
-currently supports the following SQL dialects (though perhaps not in full):
+About
 
-- ANSI SQL - this is the base version and on occasion may not strictly follow
-  the ANSI/ISO SQL definition
-- [Athena](https://aws.amazon.com/athena/)
-- [BigQuery](https://cloud.google.com/bigquery/)
-- [ClickHouse](https://clickhouse.com/)
-- [Databricks](https://databricks.com/) (note: this extends the `sparksql` dialect with
-  [Unity Catalog](https://docs.databricks.com/data-governance/unity-catalog/index.html) syntax).
-- [Db2](https://www.ibm.com/analytics/db2)
-- [Doris](https://doris.apache.org/)
-- [DuckDB](https://duckdb.org/)
-- [Exasol](https://www.exasol.com/)
-- [FlinkSQL](https://nightlies.apache.org/flink/flink-docs-master/)
-- [Greenplum](https://greenplum.org/)
-- [Hive](https://hive.apache.org/)
-- [Impala](https://impala.apache.org/)
-- [MariaDB](https://www.mariadb.com/)
-- [Materialize](https://materialize.com/)
-- [MySQL](https://www.mysql.com/)
-- [Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/index.html)
-- [PostgreSQL](https://www.postgresql.org/) (aka Postgres)
-- [Redshift](https://docs.aws.amazon.com/redshift/index.html)
-- [Snowflake](https://www.snowflake.com/)
-- [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm)
-- [SparkSQL](https://spark.apache.org/docs/latest/)
-- [SQLite](https://www.sqlite.org/)
-- [StarRocks](https://www.starrocks.io)
-- [Teradata](https://www.teradata.com/)
-- [Transact-SQL](https://docs.microsoft.com/en-us/sql/t-sql/language-reference) (aka T-SQL)
-- [Trino](https://trino.io/)
-- [Vertica](https://www.vertica.com/)
+Supported Dialects
 
-We aim to make it easy to expand on the support of these dialects and also
-add other, currently unsupported, dialects. Please [raise issues](https://github.com/sqlfluff/sqlfluff/issues)
-(or upvote any existing issues) to let us know of demand for missing support.
+Supported Templates
 
-Pull requests from those that know the missing syntax or dialects are especially
-welcomed and are the best way for you to get support added. We are happy
-to work with any potential contributors on this to help them add this support.
-Please raise an issue first for any large feature change to ensure it is a good
-fit for this project before spending time on this work.
+Getting Started
 
-## Templates Supported
+Rust Parser and Lexer
 
-SQL itself does not lend itself well to [modularity](https://docs.getdbt.com/docs/viewpoint#section-modularity),
-so to introduce some flexibility and reusability it is often [templated](https://en.wikipedia.org/wiki/Template_processor)
-as discussed more in [our modularity documentation](https://docs.sqlfluff.com/en/stable/perma/modularity.html).
+Docker
 
-**SQLFluff** supports the following templates:
+Documentation
 
-- [Jinja](https://jinja.palletsprojects.com/) (aka Jinja2)
-- SQL placeholders (e.g. SQLAlchemy parameters)
-- [Python format strings](https://docs.python.org/3/library/string.html#format-string-syntax)
-- [dbt](https://www.getdbt.com/) (requires plugin)
+Development
 
-Again, please raise issues if you wish to support more templating languages/syntaxes.
+Security
 
-## VS Code Extension
+Contributing
 
-We also have a VS Code extension:
+Upstream Project
 
-- [Github Repository](https://github.com/sqlfluff/vscode-sqlfluff)
-- [Extension in VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=dorzey.vscode-sqlfluff)
+License
 
-# Getting Started
+About
 
-To get started, install the package and run `sqlfluff lint` or `sqlfluff fix`.
+Dechapon25 is a configurable SQL linter designed to help developers and data teams write clean, consistent, and maintainable SQL.
 
-```shell
-$ pip install sqlfluff
-$ echo "  SELECT a  +  b FROM tbl;  " > test.sql
-$ sqlfluff lint test.sql --dialect ansi
-== [test.sql] FAIL
-L:   1 | P:   1 | LT01 | Expected only single space before 'SELECT' keyword.
-                       | Found '  '. [layout.spacing]
-L:   1 | P:   1 | LT02 | First line should not be indented.
-                       | [layout.indent]
-L:   1 | P:   1 | LT13 | Files must not begin with newlines or whitespace.
-                       | [layout.start_of_file]
-L:   1 | P:  11 | LT01 | Expected only single space before binary operator '+'.
-                       | Found '  '. [layout.spacing]
-L:   1 | P:  14 | LT01 | Expected only single space before naked identifier.
-                       | Found '  '. [layout.spacing]
-L:   1 | P:  27 | LT01 | Unnecessary trailing whitespace at end of file.
-                       | [layout.spacing]
-L:   1 | P:  27 | LT12 | Files must end with a single trailing newline.
-                       | [layout.end_of_file]
-All Finished 📜 🎉!
-```
+The project is derived from SQLFluff and retains compatibility with many of the capabilities provided by the upstream project.
 
-If you want the optional Rust-backed parser and lexer, install the `rs` extra:
+Key capabilities include:
 
-```shell
-$ pip install sqlfluff[rs]
-```
+SQL linting
 
-On supported CPython 3.10+ platforms this installs a prebuilt ABI3 wheel. If no
-wheel is published for your platform, `pip` falls back to building `sqlfluffrs`
-from source, which requires a Rust toolchain and a working C/C++ build setup.
-The easiest way to install Rust is with [rustup](https://rustup.rs/).
+Automatic SQL formatting and fixing
 
-Alternatively, you can use the [**Official SQLFluff Docker Image**](https://hub.docker.com/r/sqlfluff/sqlfluff)
-or have a play using [**SQLFluff online**](https://online.sqlfluff.com/).
+Multiple SQL dialects
 
-For full [CLI usage](https://docs.sqlfluff.com/en/stable/perma/cli.html) and
-[rules reference](https://docs.sqlfluff.com/en/stable/perma/rules.html), see
-[the SQLFluff docs](https://docs.sqlfluff.com/en/stable/).
+Jinja templating
 
-# Documentation
+SQL parameter placeholders
 
-For full documentation visit [docs.sqlfluff.com](https://docs.sqlfluff.com/en/stable/).
-This documentation is generated from this repository so please raise
-[issues](https://github.com/sqlfluff/sqlfluff/issues) or pull requests
-for any additions, corrections, or clarifications.
+Python format strings
 
-# Releases
+dbt integration
 
-**SQLFluff** adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
-so breaking changes should be restricted to major versions releases. Some
-elements (such as the python API) are in a less stable state and may see more
-significant changes more often. For details on breaking changes and how
-to migrate between versions, see our
-[release notes](https://docs.sqlfluff.com/en/latest/perma/releasenotes.html). See the
-[changelog](CHANGELOG.md) for more details. If you would like to join in, please
-consider [contributing](CONTRIBUTING.md).
+Command-line tooling
 
-New releases are made monthly. For more information, visit
-[Releases](https://github.com/sqlfluff/sqlfluff/releases).
+Optional Rust-backed parsing and lexing
 
-# SQLFluff on Slack
+Extensible linting rules
 
-We have a fast-growing community
-[on Slack](https://join.slack.com/t/sqlfluff/shared_invite/zt-3qprhrisj-ClUo_1tLmYBzrVu5ZoDwIw),
-come and join us!
+Automated testing and development tooling
 
-# SQLFluff on Twitter
+The goal of this repository is to provide a maintained development branch with project-specific improvements while preserving compatibility with the upstream SQLFluff ecosystem where practical.
 
-Follow us [on Twitter @SQLFluff](https://twitter.com/SQLFluff) for announcements
-and other related posts.
+Supported Dialects
 
-# Contributing
+The project supports a wide range of SQL dialects, including:
 
-We are grateful to all our [contributors](https://github.com/sqlfluff/sqlfluff/graphs/contributors).
-There is a lot to do in this project, and we are just getting started.
+ANSI SQL
 
-If you want to understand more about the architecture of **SQLFluff**, you can
-find [more here](https://docs.sqlfluff.com/en/latest/perma/architecture.html).
+Athena
 
-If you would like to contribute, check out the
-[open issues on GitHub](https://github.com/sqlfluff/sqlfluff/issues). You can also see
-the guide to [contributing](CONTRIBUTING.md), including the pull request
-acceptance principles and AI-assisted contribution expectations.
+BigQuery
 
-# Sponsors
+ClickHouse
 
-<img src="https://raw.githubusercontent.com/sqlfluff/sqlfluff/refs/heads/main/images/datacoves.png" alt="Datacoves" width="150"/><br>
-The turnkey analytics stack, find out more at [Datacoves.com](https://datacoves.com/).
+Databricks
+
+Db2
+
+Doris
+
+DuckDB
+
+Exasol
+
+FlinkSQL
+
+Greenplum
+
+Hive
+
+Impala
+
+MariaDB
+
+Materialize
+
+MySQL
+
+Oracle
+
+PostgreSQL
+
+Redshift
+
+Snowflake
+
+SOQL
+
+SparkSQL
+
+SQLite
+
+StarRocks
+
+Teradata
+
+Transact-SQL (T-SQL)
+
+Trino
+
+Vertica
+
+Dialect support may vary depending on the version and changes introduced in this repository.
+
+If you need support for a dialect or syntax that is not currently available, please open an issue with a clear example of the SQL syntax.
+
+Supported Templates
+
+Dechapon25 supports several SQL templating approaches, including:
+
+Jinja
+
+SQL parameter placeholders
+
+Python format strings
+
+dbt through the appropriate plugin
+
+Template support may require additional dependencies depending on your workflow.
+
+Getting Started
+
+Installation
+
+Install the package using pip:
+
+pip install sqlfluff 
+
+The package name remains sqlfluff for compatibility with the upstream project unless this repository publishes a separately named distribution.
+
+Create a SQL file:
+
+echo " SELECT a + b FROM tbl; " > test.sql 
+
+Run the linter:
+
+sqlfluff lint test.sql --dialect ansi 
+
+You can automatically fix supported violations with:
+
+sqlfluff fix test.sql --dialect ansi 
+
+Example output:
+
+== [test.sql] FAIL L: 1 | P: 1 | LT01 | Expected only single space before 'SELECT' keyword. L: 1 | P: 1 | LT02 | First line should not be indented. L: 1 | P: 11 | LT01 | Expected only single space before binary operator '+'. L: 1 | P: 14 | LT01 | Expected only single space before naked identifier. 
+
+Rust Parser and Lexer
+
+An optional Rust-backed parser and lexer can be installed with the rs extra:
+
+pip install sqlfluff[rs] 
+
+On supported CPython 3.10+ platforms, this can install a prebuilt ABI3 wheel.
+
+If a compatible wheel is unavailable for your platform, the package may be built from source.
+
+Building from source requires:
+
+Rust
+
+A working C/C++ build environment
+
+A compatible Python development environment
+
+The easiest way to install Rust is through rustup.
+
+Docker
+
+You can run SQL linting in a containerized environment when Docker is preferred.
+
+Example:
+
+docker run --rm -v "$PWD:/workspace" -w /workspace sqlfluff/sqlfluff lint test.sql --dialect ansi 
+
+For production environments, always use an explicitly selected and reviewed image version rather than relying blindly on a mutable latest tag.
+
+Documentation
+
+For SQLFluff-compatible documentation and detailed CLI information, refer to the upstream documentation:
+
+SQLFluff Documentation
+
+Useful documentation includes:
+
+CLI usage
+
+Configuration
+
+Linting rules
+
+SQL dialects
+
+Templating
+
+dbt integration
+
+Architecture
+
+Development
+
+Documentation specific to Dechapon25 should be added to this repository as project-specific behavior diverges from upstream SQLFluff.
+
+Development
+
+Clone the repository:
+
+git clone https://github.com/Marslevelsafety/Dechapon25.git cd Dechapon25 
+
+Install the development dependencies according to the project's development documentation.
+
+Before submitting changes, developers should run the relevant test and linting commands.
+
+Typical checks may include:
+
+pytest 
+
+and:
+
+ruff check . 
+
+For changes affecting SQL parsing, linting rules, dialects, templating, or CLI behavior, add or update the corresponding tests.
+
+Security
+
+Security issues should not be disclosed publicly through normal GitHub issues when they could expose a vulnerability or sensitive information.
+
+Please report security issues privately through the repository's configured security reporting mechanism.
+
+Do not include the following information in public issues:
+
+API keys
+
+Access tokens
+
+Passwords
+
+Private credentials
+
+Private user information
+
+Exploit details that could enable immediate abuse
+
+If you discover a credential accidentally committed to the repository:
+
+Revoke or rotate the credential immediately.
+
+Remove the secret from the affected code.
+
+Check whether the secret exists in repository history.
+
+Report the incident privately.
+
+Do not rely solely on deleting the file from the latest commit.
+
+Contributing
+
+Contributions are welcome.
+
+Before making a large change, please open an issue describing:
+
+The problem
+
+The proposed solution
+
+Expected behavior
+
+Compatibility considerations
+
+Tests that will be added or modified
+
+Pull requests should:
+
+Include appropriate tests.
+
+Keep changes focused.
+
+Avoid unrelated modifications.
+
+Follow the project's formatting and linting requirements.
+
+Avoid committing secrets or credentials.
+
+Clearly describe behavior changes.
+
+AI-assisted contributions are welcome when the contributor reviews, understands, and takes responsibility for the resulting code.
+
+Upstream Project
+
+Dechapon25 is derived from the open-source SQLFluff project.
+
+Upstream repository:
+
+https://github.com/sqlfluff/sqlfluff
+
+The upstream project provides the original SQL linting architecture, dialect support, documentation, and much of the functionality used by this repository.
+
+This repository is not an official SQLFluff repository and should not be presented as being operated by or endorsed by the SQLFluff maintainers.
+
+For upstream issues, documentation, releases, and project information, please refer to the official SQLFluff repository.
+
+Attribution
+
+This project contains or is derived from software originating from SQLFluff.
+
+Original project:
+
+SQLFluff — The SQL Linter for Humans
+
+https://github.com/sqlfluff/sqlfluff
+
+Copyright and licensing information for upstream components is retained according to the applicable project licenses.
+
+Please review the repository's LICENSE files and individual component licenses before redistributing modified versions.
+
+License
+
+Dechapon25 is distributed under the applicable open-source license contained in this repository.
+
+See:
+
+LICENSE 
+
+and any additional license or notice files included with the project.
+
+Third-party components may be distributed under their respective licenses.
+
+Project Identity
+
+Dechapon25
+
+Repository:
+
+https://github.com/Marslevelsafety/Dechapon25
+
+Upstream:
+
+https://github.com/sqlfluff/sqlfluff
+
+This repository is an independent fork and development project. It should not be confused with the official SQLFluff project.
+
