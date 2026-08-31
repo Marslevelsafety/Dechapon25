@@ -1,16 +1,16 @@
 Dechapon25 SQL Linter
 
-￼
-
 A SQL Linter for Humans
 
 Dechapon25 is a SQL linting and formatting project based on the open-source SQLFluff project.
 
-It provides configurable SQL linting, automatic fixes, multiple SQL dialects, templating support, and developer tooling for maintaining consistent and readable SQL code.
+It provides configurable SQL linting, automated fixes, support for multiple SQL dialects, templating capabilities, and development tooling to help teams maintain consistent, readable, and maintainable SQL code.
 
-Project status: Dechapon25 is an independent fork of SQLFluff. Changes made in this repository may differ from the upstream SQLFluff project.
+Project status: Dechapon25 is an independent fork of SQLFluff. Changes introduced in this repository may differ from those in the upstream SQLFluff project.
 
-￼ ￼ ￼ ￼
+
+
+\
 
 Table of Contents
 
@@ -40,17 +40,17 @@ License
 
 About
 
-Dechapon25 is a configurable SQL linter designed to help developers and data teams write clean, consistent, and maintainable SQL.
+Dechapon25 is a configurable SQL linter designed to help developers and data teams produce clean, consistent, and maintainable SQL.
 
-The project is derived from SQLFluff and retains compatibility with many of the capabilities provided by the upstream project.
+The project is derived from SQLFluff and retains compatibility with many capabilities provided by the upstream project.
 
 Key capabilities include:
 
 SQL linting
 
-Automatic SQL formatting and fixing
+Automated SQL formatting and fixing
 
-Multiple SQL dialects
+Support for multiple SQL dialects
 
 Jinja templating
 
@@ -68,11 +68,11 @@ Extensible linting rules
 
 Automated testing and development tooling
 
-The goal of this repository is to provide a maintained development branch with project-specific improvements while preserving compatibility with the upstream SQLFluff ecosystem where practical.
+The objective of this repository is to provide a maintained development branch with project-specific improvements while preserving compatibility with the upstream SQLFluff ecosystem wherever practical.
 
 Supported Dialects
 
-The project supports a wide range of SQL dialects, including:
+The project supports a broad range of SQL dialects, including:
 
 ANSI SQL
 
@@ -132,7 +132,7 @@ Vertica
 
 Dialect support may vary depending on the version and changes introduced in this repository.
 
-If you need support for a dialect or syntax that is not currently available, please open an issue with a clear example of the SQL syntax.
+If you require support for a dialect or syntax that is not currently available, please open an issue and include a clear example of the relevant SQL syntax.
 
 Supported Templates
 
@@ -146,7 +146,7 @@ Python format strings
 
 dbt through the appropriate plugin
 
-Template support may require additional dependencies depending on your workflow.
+Additional dependencies may be required depending on your templating workflow.
 
 Getting Started
 
@@ -166,7 +166,7 @@ Run the linter:
 
 sqlfluff lint test.sql --dialect ansi 
 
-You can automatically fix supported violations with:
+To automatically fix supported violations, run:
 
 sqlfluff fix test.sql --dialect ansi 
 
@@ -176,11 +176,11 @@ Example output:
 
 Rust Parser and Lexer
 
-An optional Rust-backed parser and lexer can be installed with the rs extra:
+An optional Rust-backed parser and lexer is available through the rs extra:
 
 pip install sqlfluff[rs] 
 
-On supported CPython 3.10+ platforms, this can install a prebuilt ABI3 wheel.
+On supported CPython 3.10+ platforms, this may install a prebuilt ABI3 wheel.
 
 If a compatible wheel is unavailable for your platform, the package may be built from source.
 
@@ -188,21 +188,21 @@ Building from source requires:
 
 Rust
 
-A working C/C++ build environment
+A functional C/C++ build environment
 
 A compatible Python development environment
 
-The easiest way to install Rust is through rustup.
+The recommended method for installing Rust is rustup.
 
 Docker
 
-You can run SQL linting in a containerized environment when Docker is preferred.
+SQL linting can be run in a containerized environment when Docker is preferred.
 
 Example:
 
 docker run --rm -v "$PWD:/workspace" -w /workspace sqlfluff/sqlfluff lint test.sql --dialect ansi 
 
-For production environments, always use an explicitly selected and reviewed image version rather than relying blindly on a mutable latest tag.
+For production environments, use an explicitly selected and reviewed image version rather than relying on a mutable latest tag.
 
 Documentation
 
@@ -210,7 +210,7 @@ For SQLFluff-compatible documentation and detailed CLI information, refer to the
 
 SQLFluff Documentation
 
-Useful documentation includes:
+Relevant documentation includes:
 
 CLI usage
 
@@ -238,7 +238,7 @@ git clone https://github.com/Marslevelsafety/Dechapon25.git cd Dechapon25
 
 Install the development dependencies according to the project's development documentation.
 
-Before submitting changes, developers should run the relevant test and linting commands.
+Before submitting changes, run the relevant test and linting commands.
 
 Typical checks may include:
 
@@ -252,7 +252,7 @@ For changes affecting SQL parsing, linting rules, dialects, templating, or CLI b
 
 Security
 
-Security issues should not be disclosed publicly through normal GitHub issues when they could expose a vulnerability or sensitive information.
+Security issues should not be disclosed publicly through standard GitHub issues when doing so could expose a vulnerability or sensitive information.
 
 Please report security issues privately through the repository's configured security reporting mechanism.
 
@@ -270,13 +270,13 @@ Private user information
 
 Exploit details that could enable immediate abuse
 
-If you discover a credential accidentally committed to the repository:
+If you discover a credential that has been accidentally committed to the repository:
 
 Revoke or rotate the credential immediately.
 
 Remove the secret from the affected code.
 
-Check whether the secret exists in repository history.
+Determine whether the secret exists in the repository history.
 
 Report the incident privately.
 
@@ -286,7 +286,7 @@ Contributing
 
 Contributions are welcome.
 
-Before making a large change, please open an issue describing:
+Before beginning a substantial change, please open an issue describing:
 
 The problem
 
@@ -310,9 +310,9 @@ Follow the project's formatting and linting requirements.
 
 Avoid committing secrets or credentials.
 
-Clearly describe behavior changes.
+Clearly describe any behavior changes.
 
-AI-assisted contributions are welcome when the contributor reviews, understands, and takes responsibility for the resulting code.
+AI-assisted contributions are welcome provided that contributors review, understand, and take responsibility for the resulting code.
 
 Upstream Project
 
@@ -324,9 +324,9 @@ https://github.com/sqlfluff/sqlfluff
 
 The upstream project provides the original SQL linting architecture, dialect support, documentation, and much of the functionality used by this repository.
 
-This repository is not an official SQLFluff repository and should not be presented as being operated by or endorsed by the SQLFluff maintainers.
+This repository is not an official SQLFluff repository and must not be represented as being operated by or endorsed by the SQLFluff maintainers.
 
-For upstream issues, documentation, releases, and project information, please refer to the official SQLFluff repository.
+For upstream issues, documentation, releases, and project information, refer to the official SQLFluff repository.
 
 Attribution
 
@@ -338,9 +338,9 @@ SQLFluff — The SQL Linter for Humans
 
 https://github.com/sqlfluff/sqlfluff
 
-Copyright and licensing information for upstream components is retained according to the applicable project licenses.
+Copyright and licensing information for upstream components is retained in accordance with the applicable project licenses.
 
-Please review the repository's LICENSE files and individual component licenses before redistributing modified versions.
+Review the repository's LICENSE files and individual component licenses before redistributing modified versions.
 
 License
 
@@ -366,5 +366,5 @@ Upstream:
 
 https://github.com/sqlfluff/sqlfluff
 
-This repository is an independent fork and development project. It should not be confused with the official SQLFluff project.
+This repository is an independent fork and development project. It is not affiliated with or endorsed by the official SQLFluff project.
 
