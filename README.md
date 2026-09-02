@@ -1,8 +1,7 @@
-Dechapon25 SQL Linter
+SQL Linter
 
-A SQL Linter for Humans
-
-Dechapon25 is a SQL linting and formatting project based on the open-source SQLFluff project.
+A SQL Linter for H
+SQL linting and formatting project based on the open-source SQLFluff project.
 
 It provides configurable SQL linting, automated fixes, support for multiple SQL dialects, templating capabilities, and development tooling to help teams maintain consistent, readable, and maintainable SQL code.
 
@@ -228,13 +227,13 @@ Architecture
 
 Development
 
-Documentation specific to Dechapon25 should be added to this repository as project-specific behavior diverges from upstream SQLFluff.
+Documentation specific to Marslevelsafety should be added to this repository as project-specific behavior diverges from upstream SQLFluff.
 
 Development
 
 Clone the repository:
 
-git clone https://github.com/Marslevelsafety/Dechapon25.git cd Dechapon25 
+git clone https://github.com/Marslevelsafety.git cd 
 
 Install the development dependencies according to the project's development documentation.
 
@@ -316,7 +315,7 @@ AI-assisted contributions are welcome provided that contributors review, underst
 
 Upstream Project
 
-Dechapon25 is derived from the open-source SQLFluff project.
+Marslevelsafety is derived from the open-source SQLFluff project.
 
 Upstream repository:
 
@@ -356,11 +355,11 @@ Third-party components may be distributed under their respective licenses.
 
 Project Identity
 
-Dechapon25
+Marslevelsafety
 
 Repository:
 
-https://github.com/Marslevelsafety/Dechapon25
+https://github.com/Marslevelsafety
 
 Upstream:
 
