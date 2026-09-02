@@ -23,9 +23,6 @@ Dechapon25 provides SQL linting and formatting capabilities with support for mul
 - [Upstream Project](#upstream-project)
 - [Attribution](#attribution)
 - [License](#license)
-
-## About
-
 Dechapon25 is a configurable SQL linter designed to help developers and data teams produce clean, consistent, and maintainable SQL.
 
 The project is derived from the open-source SQLFluff project and retains compatibility with upstream functionality where practical.
